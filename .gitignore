@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.db
+*.sqlite3
+*.log
+*.bak
+*.swp
+.venv/
+.env/
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# VS Code
+.vscode/
+
+4. (Optional) Add a README.md to describe the project.
+
+5. (Optional) Add a pyproject.toml or setup.cfg for packaging and dependency management.
