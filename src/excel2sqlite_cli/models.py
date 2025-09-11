@@ -1,11 +1,10 @@
 from dataclasses import dataclass
-from typing import List, Dict, Any
+from typing import List
 
 @dataclass
 class WorksheetConfig:
     name: str
-    start_row: int
-    start_col: int
+    start_cell: str  # e.g., "C21", "AN7"
 
 @dataclass
 class TableSchema:

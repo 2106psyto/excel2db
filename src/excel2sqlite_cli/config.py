@@ -1,7 +1,6 @@
 import yaml
-from typing import List
-from .models import WorksheetConfig, ConfigModel
 import jsonschema
+from .models import WorksheetConfig, ConfigModel
 
 CONFIG_SCHEMA = {
     "type": "object",
@@ -12,10 +11,12 @@ CONFIG_SCHEMA = {
                 "type": "object",
                 "properties": {
                     "name": {"type": "string"},
-                    "start_row": {"type": "integer", "minimum": 1},
-                    "start_col": {"type": "integer", "minimum": 1}
+                    "start_cell": {
+                        "type": "string",
+                        "pattern": "^[A-Z]+[1-9][0-9]*$"
+                    }
                 },
-                "required": ["name"]
+                "required": ["name", "start_cell"]
             }
         }
     },
@@ -37,8 +38,7 @@ def load_yaml_config(config_path: str) -> ConfigModel:
         worksheets.append(
             WorksheetConfig(
                 name=ws["name"],
-                start_row=ws.get("start_row", 1),
-                start_col=ws.get("start_col", 1)
+                start_cell=ws["start_cell"]
             )
         )
     return ConfigModel(worksheets=worksheets)

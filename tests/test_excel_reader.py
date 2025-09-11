@@ -16,7 +16,7 @@ def test_read_worksheet_data():
     wb.save(tmp_file.name)
     tmp_file.close()
 
-    ws_cfg = WorksheetConfig(name="TestSheet", start_row=1, start_col=1)
+    ws_cfg = WorksheetConfig(name="TestSheet", start_cell="A1")
     data = read_worksheet_data(tmp_file.name, ws_cfg)
     assert data[0] == ["A", "B", "C"]
     assert data[1] == [1, 2, 3]
