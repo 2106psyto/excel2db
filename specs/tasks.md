@@ -15,8 +15,8 @@
 - [x] T007. SQLite Writer Service [P]
 - [x] T008. Integration: Excel to SQLite Workflow
 - [x] T010. Unit and Integration Tests [P]
-- [ ] T009. Stand-alone Executable Packaging
 - [ ] T011. Documentation and Quickstart Guide
+- [ ] T009. Stand-alone Executable Packaging
 - [ ] T012. Polish: Logging, Error Handling, Linting [P]
 
 ---
@@ -143,8 +143,8 @@
 - **T001 (Project Setup)** and **T002 (Dependency Installation)** must be completed before any parallel tasks.
 - Parallel tasks (**T003**, **T004**, **T005**, **T006**, **T007**, **T010**, **T012**) can be executed after setup and dependencies.
 - **T008 (Integration)** depends on completion of all core modules (T003–T007).
-- **T009 (Packaging)** depends on a working main workflow (T008).
-- **T011 (Documentation)** follows implementation and packaging.
+- **T011 (Documentation)** follows implementation and integration.
+- **T009 (Packaging)** can be deferred until T011 (Documentation) is done, so documentation and quickstart may be included in the packaged executable.
 
 ---
 
@@ -165,9 +165,8 @@ flowchart TD
     T005 --> T008
     T006 --> T008
     T007 --> T008
-    T008 --> T009(Executable Packaging)
-    T009 --> T011(Documentation & Quickstart)
-    T008 --> T011
+    T008 --> T011(Documentation & Quickstart)
     T010 --> T011
     T012 --> T011
+    T011
 ```

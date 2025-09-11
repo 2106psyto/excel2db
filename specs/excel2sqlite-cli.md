@@ -16,7 +16,8 @@ Many users need to convert structured data from Excel workbooks into SQLite data
     - No need to install Microsoft Excel to develop or use the program
   - Configuration file (`.yaml`) specifying:
     - Worksheets to import
-    - Starting row and column for each worksheet's table data
+    - Starting cell address (e.g., "C21", "AN7") for each worksheet's table data
+
 - **Output:**
   - SQLite3 database file with tables corresponding to specified worksheets
     - Must preserve Japanese characters in table names, column names, and data
