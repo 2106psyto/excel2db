@@ -36,6 +36,7 @@
   - `PyYAML`
   - `sqlite3` (standard library)
   - `argparse` (standard library)
+  - `jsonschema`
 - Ensure compatibility with Python 3.11.x, 3.12.x, 3.13.x
 
 ---
