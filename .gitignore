@@ -22,6 +22,5 @@ Desktop.ini
 # VS Code
 .vscode/
 
-4. (Optional) Add a README.md to describe the project.
-
-5. (Optional) Add a pyproject.toml or setup.cfg for packaging and dependency management.
+.python-version
+uv.*
