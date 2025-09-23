@@ -17,9 +17,13 @@ def test_read_worksheet_data():
     tmp_file.close()
 
     ws_cfg = WorksheetConfig(name="TestSheet", start_cell="A1")
-    data = read_worksheet_data(tmp_file.name, ws_cfg)
+    data, _ = read_worksheet_data(tmp_file.name, ws_cfg)
     assert data[0] == ["A", "B", "C"]
     assert data[1] == [1, 2, 3]
     assert data[2] == [4, 5, 6]
 
     os.remove(tmp_file.name)
+
+#TODO
+# def test_read_worksheet_data_with_merged_headers():
+#     pass

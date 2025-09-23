@@ -7,8 +7,8 @@ from excel2sqlite_cli.config import load_yaml_config, ConfigValidationError
 def test_load_yaml_config_valid():
     config_dict = {
         "worksheets": [
-            {"name": "Sheet1", "start_cell": "C21"},
-            {"name": "Sheet2", "start_cell": "AN7"}
+            {"name": "Sheet1", "start_cell": "C21", "header_rows": 2},
+            {"name": "Sheet2", "start_cell": "AN7", "header_rows": 1}
         ]
     }
     with tempfile.NamedTemporaryFile("w+", delete=False, suffix=".yaml", encoding="utf-8") as tmp:

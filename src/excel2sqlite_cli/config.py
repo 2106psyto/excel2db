@@ -14,9 +14,10 @@ CONFIG_SCHEMA = {
                     "start_cell": {
                         "type": "string",
                         "pattern": "^[A-Z]+[1-9][0-9]*$"
-                    }
+                    },
+                    "header_rows": {"type": "integer", "minimum": 1, "default": 1}
                 },
-                "required": ["name", "start_cell"]
+                "required": ["name", "start_cell", "header_rows"]
             }
         }
     },
@@ -38,7 +39,8 @@ def load_yaml_config(config_path: str) -> ConfigModel:
         worksheets.append(
             WorksheetConfig(
                 name=ws["name"],
-                start_cell=ws["start_cell"]
+                start_cell=ws["start_cell"],
+                header_rows=ws["header_rows"]
             )
         )
     return ConfigModel(worksheets=worksheets)

@@ -21,7 +21,7 @@ def test_main_workflow(monkeypatch):
     # Prepare YAML config
     config_dict = {
         "worksheets": [
-            {"name": "Sheet1", "start_cell": "A1"}
+            {"name": "Sheet1", "start_cell": "A1", "header_rows": 1}
         ]
     }
     config_file = tempfile.NamedTemporaryFile("w+", delete=False, suffix=".yaml", encoding="utf-8")

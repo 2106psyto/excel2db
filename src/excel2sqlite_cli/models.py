@@ -5,6 +5,7 @@ from typing import List
 class WorksheetConfig:
     name: str
     start_cell: str  # e.g., "C21", "AN7"
+    header_rows: int = 1  # Number of rows to treat as header, default is 1
 
 @dataclass
 class TableSchema:
