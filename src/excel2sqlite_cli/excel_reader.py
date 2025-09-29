@@ -3,13 +3,15 @@ from .models import WorksheetConfig
 from typing import List, Any
 
 
-def _get_merged_headers(ws, number_of_rows):
+def _get_merged_headers(ws, ws_config: WorksheetConfig) -> List[str]:
     merged_headers = []
+    _, start_col = utils.coordinate_to_tuple(ws_config.start_cell)
+    header_rows = ws_config.header_rows
     max_col = ws.max_column
 
-    for col_idx in range(1, max_col + 1):
+    for col_idx in range(start_col, max_col + 1):
         column_parts = []
-        for row_num in range(1, number_of_rows + 1):
+        for row_num in range(1, header_rows + 1):
             cell_value = ws.cell(row=row_num, column=col_idx).value
 
             # NOTE:
@@ -34,5 +36,5 @@ def read_worksheet_data(excel_path: str, ws_config: WorksheetConfig) -> List[Lis
         values_only=True
     ):
         data.append(list(row))
-    header = _get_merged_headers(ws, ws_config.header_rows)
+    header = _get_merged_headers(ws, ws_config)
     return data, header
