@@ -111,6 +111,7 @@ MIT ライセンス
 ### ビルド方法
 
 #### オプション 1: Python パッケージのみビルド（推奨）
+
 uv を使用して wheel と sdist をビルド:
 
 ```powershell
@@ -118,6 +119,7 @@ uv build
 ```
 
 **出力:**
+
 - `dist/excel2sqlite_cli-0.1.0-py3-none-any.whl` - Python wheel（配布用）
 - `dist/excel2sqlite_cli-0.1.0.tar.gz` - ソース配布
 
@@ -140,11 +142,13 @@ python build_all.py
 ```
 
 **出力:**
+
 - `dist/excel2sqlite_cli-0.1.0-py3-none-any.whl` - Python wheel
 - `dist/excel2sqlite_cli-0.1.0.tar.gz` - ソース配布
 - `dist/excel2sqlite_cli.exe` - スタンドアロン実行ファイル（セキュリティ警告の可能性あり）
 
 前回のビルドを削除してから実行する場合:
+
 ```powershell
 python build_all.py --clean
 ```
